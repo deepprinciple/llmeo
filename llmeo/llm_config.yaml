@@ -1,0 +1,5 @@
+OPENAI_API_KEY: 
+ANTHROPIC_API_KEY: 
+temperature: 0.5
+top_p: 1.0
+max_tokens: 4096
