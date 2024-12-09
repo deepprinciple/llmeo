@@ -1,0 +1,19 @@
+name: llmeo
+channels:
+  - hjkgroup
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip=24.3.1
+  - pandas=2.2.3
+  - numpy=2.0.2
+  - pyyaml=6.0.2
+  - pytest=8.3.3
+  - xtb=6.6.1
+  - openai=1.54.3
+  - anthropic=0.39.0
+  - rdkit=2024.09.2
+  - pip:
+    - molsimplify==1.7.5
+    - git+https://github.com/hkneiding/uxtbpy

@@ -1,0 +1,11 @@
+SMILES,id,charge,connecting atom element,connecting atom index
+CN(C)c1ccncc1,DAPYRN-subgraph-1,0,N,2
+CCP(CC)CC,TRIEPH-subgraph-1,0,P,1
+COc1ccncc1,MOPYRN-subgraph-1,0,N,1
+c1ccc2c(c1)[nH]cn2,BIZOLE-subgraph-1,0,N,2
+c1ccccc1P(c2ccccc2)c3ccccc3,TRIPPH-subgraph-1,0,P,1
+[O-]c1ccc(OC)cc1,MOPHEN-subgraph-1,-1,O,1
+[S-]c1ccc(C)cc1,MEPHEN-subgraph-1,-1,S,1
+[C-]#C,ACETYL-subgraph-1,-1,C,1
+O=S(=O)([O-])c1ccccc1,BESFAN-subgraph-1,-1,O,3
+[O-]C(=O)C(F)(F)F,TFAATE-subgraph-1,-1,O,1
