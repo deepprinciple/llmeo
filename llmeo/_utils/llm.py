@@ -165,7 +165,6 @@ class Gemini:
         """Initialize the model"""
         try:    
             from google import genai
-            print(self.config.gemini_api_key)
             self.client = genai.Client(api_key=self.config.gemini_api_key, http_options={'api_version':'v1alpha'})
         except Exception as e:
             raise LLMError(f"Failed to initialize Gemini: {str(e)}")

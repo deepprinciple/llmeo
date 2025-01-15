@@ -85,6 +85,7 @@ Create `llm_config.yaml` with your settings:
 ```yaml
 OPENAI_API_KEY: "your-openai-key-here"  # optional
 ANTHROPIC_API_KEY: "your-anthropic-key-here"  # Optional
+GEMINI_API_KEY: "your-gemini-key-here"  # Optional
 top_p: 1.0
 max_tokens: 4096
 ```

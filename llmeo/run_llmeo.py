@@ -27,7 +27,6 @@ def get_llm_model(opt):
             model = Claude3(config)
         elif opt.model == "o1":
             model = GPTo1(config, name="o1")
-            print("o1 Model created")
         elif opt.model == "gemini":
             model = Gemini(config, name="gemini-2.0-flash-thinking-exp")
  
