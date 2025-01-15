@@ -14,6 +14,7 @@ dependencies:
   - openai=1.54.3
   - anthropic=0.39.0
   - rdkit=2024.09.2
+  - httpx=0.28.1
   - pip:
     - molsimplify==1.7.5
     - git+https://github.com/hkneiding/uxtbpy
