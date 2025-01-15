@@ -6,7 +6,7 @@ from uuid import uuid4
 
 import pandas as pd
 from llmeo._utils.ga import ga_sample
-from llmeo._utils.llm import GPT4, Claude3, GPTo1, LLMConfig, LLMError
+from llmeo._utils.llm import GPT4, Claude3, GPTo1, Gemini, LLMConfig, LLMError
 from llmeo._utils.utils import (find_tmc_in_space, make_prompt,
                           retrive_tmc_from_message)
 from llmeo.prompts import (OFF_SPRING_MAP, PROMPT_G, PROMPT_MB, PROMPT_MPSG,
@@ -25,6 +25,11 @@ def get_llm_model(opt):
             model = GPT4(config)
         elif opt.model == "claude-3-5-sonnet-20240620":
             model = Claude3(config)
+        elif opt.model == "o1":
+            model = GPTo1(config, name="o1")
+        elif opt.model == "gemini":
+            model = Gemini(config, name="gemini-2.0-flash-thinking-exp")
+ 
         model.create()
         return model
     except LLMError as e:
@@ -345,14 +350,17 @@ if __name__ == "__main__":
         "--model",  
         type=str,  
         default="ga",  
-        choices=["ga", "o1-preview", "o1-mini", "gpt-4", "claude-3-5-sonnet-20240620"],  
+        choices=["ga", "o1", "o1-preview", "o1-mini", "gpt-4", "claude-3-5-sonnet-20240620", "gemini"],  
+
         help="""  
         Model to use for TMC generation:  
         - ga: Genetic Algorithm (fastest, no API costs)  
+        - o1: OpenAI o1 model  
         - o1-preview: OpenAI o1-preview model  
         - o1-mini: OpenAI o1-mini model  
         - gpt-4: GPT-4o model 
         - claude-3-5-sonnet-20240620: Anthropic's Claude model  
+        - gemini: Google Gemini model  
         """  
     )  
     

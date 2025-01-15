@@ -12,6 +12,7 @@ class LLMConfig:
         self,
         openai_api_key: Optional[str] = None,
         anthropic_api_key: Optional[str] = None,
+        gemini_api_key: Optional[str] = None,
         temperature: float = 0.5,
         top_p: float = 1.0,
         max_tokens: int = 4096,
@@ -19,6 +20,7 @@ class LLMConfig:
     ):
         self.openai_api_key = openai_api_key
         self.anthropic_api_key = anthropic_api_key
+        self.gemini_api_key = gemini_api_key
         self.temperature = temperature
         self.top_p = top_p
         self.max_tokens = max_tokens
@@ -36,6 +38,7 @@ class LLMConfig:
         return cls(
             openai_api_key=config_data.get("OPENAI_API_KEY"),
             anthropic_api_key=config_data.get("ANTHROPIC_API_KEY"),
+            gemini_api_key=config_data.get("GEMINI_API_KEY"),
             temperature=config_data.get("temperature", 0.5),
             top_p=config_data.get("top_p", 1.0),
             max_tokens=config_data.get("max_tokens", 4096),
@@ -149,6 +152,32 @@ class Claude3:
             return response.content[0].text
         except Exception as e:
             raise LLMError(f"Claude-3 API call failed: {str(e)}")
+
+      
+class Gemini:
+    """Gemini model implementation"""
+    def __init__(self, config: LLMConfig, name: str = "gemini-2.0-flash-thinking-exp"):
+        self.config = config
+        self.name = name
+        self.client = None
+
+    def create(self) -> None:
+        """Initialize the model"""
+        try:    
+            from google import genai
+            self.client = genai.Client(api_key=self.config.gemini_api_key, http_options={'api_version':'v1alpha'})
+        except Exception as e:
+            raise LLMError(f"Failed to initialize Gemini: {str(e)}")
+        
+    def call(self, content: str, system: Optional[str] = None) -> str:
+        """Call the model with content"""
+        try:
+            response = self.client.models.generate_content(
+                model=self.name, contents=content
+            )
+            return response.candidates[0].content.parts[1].text
+        except Exception as e:
+            raise LLMError(f"Gemini API call failed: {str(e)}")
 
 def test_models(config: LLMConfig):
     """Test different LLM models"""

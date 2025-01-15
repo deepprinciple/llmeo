@@ -3,6 +3,8 @@ OFF_SPRING_MAP = {
     3: "THREE",
     5: "FIVE",
     10: "TEN",
+    20: "TWENTY",
+    200: "TWO_HUNDRED",
 }
 
 PROMPT_G = (
@@ -27,7 +29,7 @@ PROMPT_G = (
     + "Then please propose NUM_SAMPLES *NEW* TMCs that have HOMO-LUMO gap larger than all the TMCs above.\n"
     + "You can make ligand crossover (i.e., swap ligands in the TMCs) and ligand mutations (i.e., substitude ligands in TMCs with thr 50 ligands in the pool) based on your knowledge to achieve the design objective.\n"
     + "If you want to be creative, you can also propose new TMCs by taking advantage of your chemistry knowledge to achieve the design objective.\n"
-    + "You should make use of BOTH the groud-truth HOMO-LUMO gap data for the TMCs provided above AND your chemistry knowledge.\n"
+    + "You should make use of BOTH the ground-truth HOMO-LUMO gap data for the TMCs provided above AND your chemistry knowledge.\n"
     + "But be aware that your chemistry knowledge may be challenged in this task. When this happens, please treat the data provided as the ground truth.\n"
     + "Also please DO NOT get stuck with the existing TMCs and ligands and try to be exploratory.\n"
     + "Be sure to use the id of provided pool of 50 ligands and control the total charge of the TMC to be -1, 0, or 1, otherwise the TMC would be considered as invalid. T\n"
@@ -63,7 +65,7 @@ PROMPT_P = (
     + "Then please propose NUM_SAMPLES *NEW* TMCs that have polarisability larger than all the TMCs above.\n"
     + "You can make ligand crossover (i.e., swap ligands in the TMCs) and ligand mutations (i.e., substitude ligands in TMCs with thr 50 ligands in the pool) based on your knowledge to achieve the design objective.\n"
     + "If you want to be creative, you can also propose new TMCs by taking advantage of your chemistry knowledge to achieve the design objective.\n"
-    + "You should make use of BOTH the groud-truth polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
+    + "You should make use of BOTH the ground-truth polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
     + "But be aware that your chemistry knowledge may be challenged in this task. When this happens, please treat the data provided as the ground truth.\n"
     + "Also please DO NOT get stuck with the existing TMCs and ligands and try to be exploratory.\n"
     + "Be sure to use the id of provided pool of 50 ligands and control the total charge of the TMC to be -1, 0, or 1, otherwise the TMC would be considered as invalid. T\n"
@@ -101,7 +103,7 @@ PROMPT_PF = (
     + "If you find the TMCs listed above are mostly with large polarisability and small HOMO-LUMO gap, propose TMCs with large HOMO-LUMO gap, and vise versa.\n"
     + "You can make ligand crossover (i.e., swap ligands in the TMCs) and ligand mutations (i.e., substitude ligands in TMCs with thr 50 ligands in the pool) based on your knowledge to achieve the design objective.\n"
     + "If you want to be creative, you can also propose new TMCs by taking advantage of your chemistry knowledge to achieve the design objective.\n"
-    + "You should make use of BOTH the groud-truth HOMO-LUMO gap and polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
+    + "You should make use of BOTH the ground-truth HOMO-LUMO gap and polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
     + "But be aware that your chemistry knowledge may be challenged in this task. When this happens, please treat the data provided as the ground truth.\n"
     + "Also please DO NOT get stuck with the existing TMCs and ligands and try to be exploratory.\n"
     + "Be sure to use the id of provided pool of 50 ligands and control the total charge of the TMC to be -1, 0, or 1, otherwise the TMC would be considered as invalid. T\n"
@@ -141,7 +143,7 @@ PROMPT_MB = (
     + "In contrast, if you find the TMCs have extremely small polarisability (< 250 au) but large HOMO-LUMO gap (> 4.5 eV), propose more TMCs with larger polarisability while maintaining their HOMO-LUMO gap.\n"
     + "You can make ligand crossover (i.e., swap ligands in the TMCs) and ligand mutations (i.e., substitude ligands in TMCs with thr 50 ligands in the pool) based on your knowledge to achieve the design objective.\n"
     + "If you want to be creative, you can also propose new TMCs by taking advantage of your chemistry knowledge to achieve the design objective.\n"
-    + "You should make use of BOTH the groud-truth HOMO-LUMO gap and polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
+    + "You should make use of BOTH the ground-truth HOMO-LUMO gap and polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
     + "But be aware that your chemistry knowledge may be challenged in this task. When this happens, please treat the data provided as the ground truth.\n"
     + "Also please DO NOT get stuck with the existing TMCs and ligands and try to be exploratory.\n"
     + "Be sure to use the id of provided pool of 50 ligands and control the total charge of the TMC to be -1, 0, or 1, otherwise the TMC would be considered as invalid. T\n"
@@ -181,7 +183,7 @@ PROMPT_MPSG = (
     + "In contrast, if you find the TMCs have extremely small polarisability (< 300 au) but also small HOMO-LUMO gap (< 0.5 eV), propose more TMCs with larger polarisability while maintaining their small HOMO-LUMO gap.\n"
     + "You can make ligand crossover (i.e., swap ligands in the TMCs) and ligand mutations (i.e., substitude ligands in TMCs with the 50 ligands in the pool) based on your knowledge to achieve the design objective.\n"
     + "If you want to be creative, you can also propose new TMCs by taking advantage of your chemistry knowledge to achieve the design objective.\n"
-    + "You should make use of BOTH the groud-truth HOMO-LUMO gap and polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
+    + "You should make use of BOTH the ground-truth HOMO-LUMO gap and polarisability data for the TMCs provided above AND your chemistry knowledge.\n"
     + "But be aware that your chemistry knowledge may be challenged in this task. When this happens, please treat the data provided as the ground truth.\n"
     + "Also please DO NOT get stuck with the existing TMCs and ligands and try to be exploratory.\n"
     + "Be sure to use the id of provided pool of 50 ligands and control the total charge of the TMC to be -1, 0, or 1, otherwise the TMC would be considered as invalid. T\n"
