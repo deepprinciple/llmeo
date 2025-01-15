@@ -15,6 +15,7 @@ dependencies:
   - anthropic=0.39.0
   - rdkit=2024.09.2
   - httpx=0.28.1
+  - google-genai=0.5.0
   - pip:
     - molsimplify==1.7.5
     - git+https://github.com/hkneiding/uxtbpy
