@@ -17,4 +17,5 @@ setup(
         'Programming Language :: Python :: 3.10',
     ],
     license='MIT',
+    version="0.1.0",
 )
