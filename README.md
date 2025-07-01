@@ -1,6 +1,7 @@
 # LLM-EO: LLM-guided Evolutionary Optimization for TMC Design
 
 LLM-EO is a novel framework that integrates Large Language Models (LLMs) into evolutionary optimization for designing functional transition metal complexes (TMCs). This approach leverages the inherent chemical knowledge of LLMs to efficiently navigate vast chemical spaces and optimize for desired properties.
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/50c0f30e-3514-4cfd-90e9-f2a1a76162e3" />
 
 ## Description
 
